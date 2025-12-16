@@ -1,0 +1,622 @@
+2025-12-15 18:14:08 [restartedMain] INFO  com.notetaker.NoteTakerApplication - Starting NoteTakerApplication using Java 23 with PID 12704 (D:\STSPROJECTS\NoteTaker\target\classes started by ASUS in D:\STSPROJECTS\NoteTaker)
+2025-12-15 18:14:08 [restartedMain] INFO  com.notetaker.NoteTakerApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-15 18:14:08 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-15 18:14:08 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-15 18:14:09 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-15 18:14:10 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 82 ms. Found 3 JPA repository interfaces.
+2025-12-15 18:14:11 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 9898 (http)
+2025-12-15 18:14:11 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9898"]
+2025-12-15 18:14:11 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-15 18:14:11 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2025-12-15 18:14:12 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 3832 ms
+2025-12-15 18:14:12 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-15 18:14:12 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 7.1.8.Final
+2025-12-15 18:14:13 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-15 18:14:13 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-12-15 18:14:14 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@60d52abb
+2025-12-15 18:14:14 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-12-15 18:14:14 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-15 18:14:14 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/notetaker]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.40
+	Default catalog/schema: notetaker/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DatasourceConnectionProviderImpl
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-15 18:14:15 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-15 18:14:15 [restartedMain] DEBUG org.hibernate.SQL - 
+    create table movie (
+        movie_id integer not null,
+        director varchar(255) not null,
+        poster varchar(255) not null,
+        release_year integer,
+        studio varchar(255) not null,
+        title varchar(200) not null,
+        primary key (movie_id)
+    ) engine=InnoDB
+2025-12-15 18:14:16 [restartedMain] DEBUG org.hibernate.SQL - 
+    create table movie_cast (
+        movie_movie_id integer not null,
+        movie_cast varchar(255)
+    ) engine=InnoDB
+2025-12-15 18:14:16 [restartedMain] DEBUG org.hibernate.SQL - 
+    create table movie_seq (
+        next_val bigint
+    ) engine=InnoDB
+2025-12-15 18:14:16 [restartedMain] DEBUG org.hibernate.SQL - 
+    insert into movie_seq ( next_val ) values ( 1 )
+2025-12-15 18:14:16 [restartedMain] DEBUG org.hibernate.SQL - 
+    create table refresh_token_seq (
+        next_val bigint
+    ) engine=InnoDB
+2025-12-15 18:14:16 [restartedMain] DEBUG org.hibernate.SQL - 
+    insert into refresh_token_seq ( next_val ) values ( 1 )
+2025-12-15 18:14:16 [restartedMain] DEBUG org.hibernate.SQL - 
+    create table refresh_token (
+        id integer not null,
+        expiration_time datetime(6),
+        refresh_token varchar(500) not null,
+        user_id varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+2025-12-15 18:14:16 [restartedMain] DEBUG org.hibernate.SQL - 
+    create table users (
+        id varchar(255) not null,
+        username varchar(255),
+        email varchar(255),
+        name varchar(255),
+        password varchar(255),
+        user_role enum ('ADMIN','USER'),
+        primary key (id)
+    ) engine=InnoDB
+2025-12-15 18:14:16 [restartedMain] DEBUG org.hibernate.SQL - 
+    alter table refresh_token 
+       drop index UKf95ixxe7pa48ryn1awmh2evt7
+2025-12-15 18:14:16 [restartedMain] DEBUG org.hibernate.SQL - 
+    alter table refresh_token 
+       add constraint UKf95ixxe7pa48ryn1awmh2evt7 unique (user_id)
+2025-12-15 18:14:17 [restartedMain] DEBUG org.hibernate.SQL - 
+    alter table users 
+       drop index UKr43af9ap4edm43mmtq01oddj6
+2025-12-15 18:14:17 [restartedMain] DEBUG org.hibernate.SQL - 
+    alter table users 
+       add constraint UKr43af9ap4edm43mmtq01oddj6 unique (username)
+2025-12-15 18:14:17 [restartedMain] DEBUG org.hibernate.SQL - 
+    alter table users 
+       drop index UK6dotkott2kjsp8vw4d0m25fb7
+2025-12-15 18:14:17 [restartedMain] DEBUG org.hibernate.SQL - 
+    alter table users 
+       add constraint UK6dotkott2kjsp8vw4d0m25fb7 unique (email)
+2025-12-15 18:14:17 [restartedMain] DEBUG org.hibernate.SQL - 
+    alter table movie_cast 
+       add constraint FKlmid3ji0uvapkxvx5nf9r06bg 
+       foreign key (movie_movie_id) 
+       references movie (movie_id)
+2025-12-15 18:14:17 [restartedMain] DEBUG org.hibernate.SQL - 
+    alter table refresh_token 
+       add constraint FKjtx87i0jvq2svedphegvdwcuy 
+       foreign key (user_id) 
+       references users (id)
+2025-12-15 18:14:17 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-15 18:14:17 [restartedMain] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-15 18:14:18 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-12-15 18:14:18 [restartedMain] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-12-15 18:14:18 [restartedMain] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-15 18:14:19 [restartedMain] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-12-15 18:14:20 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-12-15 18:14:20 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9898"]
+2025-12-15 18:14:20 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 9898 (http) with context path '/'
+2025-12-15 18:14:20 [restartedMain] INFO  com.notetaker.NoteTakerApplication - Started NoteTakerApplication in 13.434 seconds (process running for 14.442)
+2025-12-15 18:14:33 [http-nio-9898-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-15 18:14:33 [http-nio-9898-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-15 18:14:33 [http-nio-9898-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-12-15 18:14:34 [http-nio-9898-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+io.jsonwebtoken.ExpiredJwtException: JWT expired at 2025-12-15T06:23:55Z. Current time: 2025-12-15T12:44:34Z, a difference of 22839036 milliseconds.  Allowed clock skew: 0 milliseconds.
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:427)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:529)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJws(DefaultJwtParser.java:589)
+	at io.jsonwebtoken.impl.ImmutableJwtParser.parseClaimsJws(ImmutableJwtParser.java:173)
+	at com.notetaker.auth.service.JwtService.extractAllClaims(JwtService.java:68)
+	at com.notetaker.auth.service.JwtService.extractClaim(JwtService.java:62)
+	at com.notetaker.auth.service.JwtService.extractEmail(JwtService.java:42)
+	at com.notetaker.auth.service.AuthFilterService.doFilterInternal(AuthFilterService.java:48)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1778)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2025-12-15 18:14:45 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (username, email, name, password, user_role, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2025-12-15 18:14:45 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-12-15 18:14:45 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        refresh_token_seq 
+    for
+        update
+2025-12-15 18:14:45 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    update
+        refresh_token_seq 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2025-12-15 18:14:45 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        refresh_token
+        (expiration_time, refresh_token, user_id, id) 
+    values
+        (?, ?, ?, ?)
+2025-12-15 18:15:14 [http-nio-9898-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-12-15 18:15:14 [http-nio-9898-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        rt1_0.id,
+        rt1_0.expiration_time,
+        rt1_0.refresh_token,
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        refresh_token rt1_0 
+    left join
+        users u1_0 
+            on u1_0.id=rt1_0.user_id 
+    where
+        rt1_0.user_id=?
+2025-12-15 18:15:14 [http-nio-9898-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.movie_id,
+        m1_0.director,
+        m1_0.poster,
+        m1_0.release_year,
+        m1_0.studio,
+        m1_0.title 
+    from
+        movie m1_0 
+    where
+        m1_0.movie_id=?
+2025-12-15 18:15:14 [http-nio-9898-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.notetaker.exception.MovieNotFoundException: Movie Not Found!]
+2025-12-15 22:27:15 [restartedMain] INFO  com.notetaker.NoteTakerApplication - Starting NoteTakerApplication using Java 23 with PID 6068 (D:\STSPROJECTS\NoteTaker\target\classes started by ASUS in D:\STSPROJECTS\NoteTaker)
+2025-12-15 22:27:15 [restartedMain] INFO  com.notetaker.NoteTakerApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-15 22:27:15 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-15 22:27:15 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-15 22:27:16 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-15 22:27:16 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 89 ms. Found 5 JPA repository interfaces.
+2025-12-15 22:27:18 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 9898 (http)
+2025-12-15 22:27:18 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9898"]
+2025-12-15 22:27:18 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-15 22:27:18 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2025-12-15 22:27:18 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 3548 ms
+2025-12-15 22:27:19 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-15 22:27:19 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 7.1.8.Final
+2025-12-15 22:27:20 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-15 22:27:20 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-12-15 22:27:20 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2ebc23d1
+2025-12-15 22:27:20 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-12-15 22:27:21 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-15 22:27:21 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/notetaker]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.40
+	Default catalog/schema: notetaker/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DatasourceConnectionProviderImpl
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-15 22:27:23 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-15 22:27:23 [restartedMain] DEBUG org.hibernate.SQL - 
+    create table tab_image_det (
+        image_id bigint not null auto_increment,
+        created_at datetime(6),
+        image_name varchar(255),
+        image_path varchar(255),
+        image_url varchar(255),
+        updated_at datetime(6),
+        user_id varchar(255) not null,
+        note_id bigint not null,
+        primary key (image_id)
+    ) engine=InnoDB
+2025-12-15 22:27:23 [restartedMain] DEBUG org.hibernate.SQL - 
+    create table tab_notes_det (
+        note_id bigint not null auto_increment,
+        body TEXT,
+        created_at datetime(6),
+        title varchar(255),
+        updated_at datetime(6),
+        user_id varchar(255) not null,
+        primary key (note_id)
+    ) engine=InnoDB
+2025-12-15 22:27:23 [restartedMain] DEBUG org.hibernate.SQL - 
+    alter table tab_image_det 
+       add constraint FKbtdifonvfdi58gjxmx63gnvbt 
+       foreign key (note_id) 
+       references tab_notes_det (note_id)
+2025-12-15 22:27:23 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-15 22:27:23 [restartedMain] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-15 22:27:25 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-12-15 22:27:25 [restartedMain] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-12-15 22:27:25 [restartedMain] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-15 22:27:26 [restartedMain] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-12-15 22:27:27 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-12-15 22:27:27 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9898"]
+2025-12-15 22:27:27 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 9898 (http) with context path '/'
+2025-12-15 22:27:27 [restartedMain] INFO  com.notetaker.NoteTakerApplication - Started NoteTakerApplication in 13.439 seconds (process running for 14.389)
+2025-12-15 22:27:34 [http-nio-9898-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-15 22:27:34 [http-nio-9898-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-15 22:27:34 [http-nio-9898-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-12-15 22:27:34 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-12-15 22:27:34 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        rt1_0.id,
+        rt1_0.expiration_time,
+        rt1_0.refresh_token,
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        refresh_token rt1_0 
+    left join
+        users u1_0 
+            on u1_0.id=rt1_0.user_id 
+    where
+        rt1_0.user_id=?
+2025-12-15 22:27:34 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-12-15 22:27:35 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-12-15 22:31:23 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-12-15 22:31:23 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        rt1_0.id,
+        rt1_0.expiration_time,
+        rt1_0.refresh_token,
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        refresh_token rt1_0 
+    left join
+        users u1_0 
+            on u1_0.id=rt1_0.user_id 
+    where
+        rt1_0.user_id=?
+2025-12-15 22:31:23 [http-nio-9898-exec-5] INFO  c.n.controller.NoteController - inside add note for user: Ak47
+2025-12-15 22:31:23 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_notes_det
+        (body, created_at, title, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?)
+2025-12-15 22:31:23 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-15 22:31:23 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-15 22:31:23 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-15 22:31:23 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-15 22:31:23 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-15 22:31:23 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-15 22:31:23 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-15 22:31:23 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-15 22:31:23 [http-nio-9898-exec-5] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (501) exceeds the maximum allowed (500, from `StreamWriteConstraints.getMaxNestingDepth()`)
+2025-12-15 22:31:23 [http-nio-9898-exec-5] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (501) exceeds the maximum allowed (500, from `StreamWriteConstraints.getMaxNestingDepth()`)]
+2025-12-15 22:50:05 [restartedMain] INFO  com.notetaker.NoteTakerApplication - Starting NoteTakerApplication using Java 23 with PID 1480 (D:\STSPROJECTS\NoteTaker\target\classes started by ASUS in D:\STSPROJECTS\NoteTaker)
+2025-12-15 22:50:05 [restartedMain] INFO  com.notetaker.NoteTakerApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-15 22:50:05 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-15 22:50:05 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-15 22:50:06 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-15 22:50:06 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 107 ms. Found 5 JPA repository interfaces.
+2025-12-15 22:50:08 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 9898 (http)
+2025-12-15 22:50:08 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9898"]
+2025-12-15 22:50:08 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-15 22:50:08 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2025-12-15 22:50:08 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 2885 ms
+2025-12-15 22:50:08 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-15 22:50:08 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 7.1.8.Final
+2025-12-15 22:50:09 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-15 22:50:09 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-12-15 22:50:10 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@51ac4894
+2025-12-15 22:50:10 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-12-15 22:50:10 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-15 22:50:10 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/notetaker]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.40
+	Default catalog/schema: notetaker/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DatasourceConnectionProviderImpl
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-15 22:50:11 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-15 22:50:11 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-15 22:50:12 [restartedMain] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-15 22:50:13 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-12-15 22:50:13 [restartedMain] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-12-15 22:50:13 [restartedMain] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-15 22:50:14 [restartedMain] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-12-15 22:50:14 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-12-15 22:50:14 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9898"]
+2025-12-15 22:50:14 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 9898 (http) with context path '/'
+2025-12-15 22:50:14 [restartedMain] INFO  com.notetaker.NoteTakerApplication - Started NoteTakerApplication in 10.428 seconds (process running for 11.328)
+2025-12-15 22:50:44 [http-nio-9898-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-15 22:50:44 [http-nio-9898-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-15 22:50:44 [http-nio-9898-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+2025-12-15 22:50:45 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-12-15 22:50:45 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        rt1_0.id,
+        rt1_0.expiration_time,
+        rt1_0.refresh_token,
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        refresh_token rt1_0 
+    left join
+        users u1_0 
+            on u1_0.id=rt1_0.user_id 
+    where
+        rt1_0.user_id=?
+2025-12-15 22:50:45 [http-nio-9898-exec-1] INFO  c.n.controller.NoteController - inside add note for user: Ak47
+2025-12-15 22:50:45 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_notes_det
+        (body, created_at, title, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?)
+2025-12-15 22:50:45 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-15 22:50:45 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-15 22:50:45 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-15 22:50:45 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-15 22:50:45 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-15 22:50:45 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-15 22:50:45 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-15 22:50:45 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
