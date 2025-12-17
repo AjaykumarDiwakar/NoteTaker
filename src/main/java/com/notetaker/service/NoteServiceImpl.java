@@ -8,6 +8,7 @@ import java.nio.file.StandardCopyOption;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -19,11 +20,14 @@ import com.notetaker.dto.ImageDto;
 import com.notetaker.dto.NoteDto;
 import com.notetaker.entity.ImageDetail;
 import com.notetaker.entity.NotesDetail;
+import com.notetaker.repository.ImageDetailRepository;
 import com.notetaker.repository.NotesDetailRepository;
 
 import jakarta.servlet.http.HttpServletRequest;
+import lombok.extern.slf4j.Slf4j;
 import tools.jackson.databind.ObjectMapper;
 
+@Slf4j
 @Service
 public class NoteServiceImpl implements NoteService {
 
@@ -38,6 +42,9 @@ public class NoteServiceImpl implements NoteService {
 
 	@Autowired
 	private NotesDetailRepository notesDetailRepository;
+	
+	@Autowired
+	private ImageDetailRepository imageDetailRepository;
 
 	@Override
 	public Object addNote(List<MultipartFile> files, String note, HttpServletRequest request) {
@@ -67,13 +74,16 @@ public class NoteServiceImpl implements NoteService {
 		}
 
 		for (MultipartFile file : files) {
-			String filepath = rootPath + File.separator + file.getOriginalFilename();
+			String originalName = file.getOriginalFilename();
+			String extension = originalName.substring(originalName.lastIndexOf("."));
+			String fileName = UUID.randomUUID().toString();
+			String filepath = rootPath + File.separator + fileName + extension;
 			try {
 				Files.copy(file.getInputStream(), Paths.get(filepath), StandardCopyOption.REPLACE_EXISTING);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			String imageUrl = baseUrl + "/file/" + file.getOriginalFilename();
+			String imageUrl = baseUrl + "/file/" + fileName + extension;
 			ImageDetail m = ImageDetail.builder().imageName(file.getOriginalFilename()).imagePath(filepath)
 					.imageUrl(imageUrl).userId(userId).createdAt(LocalDateTime.now()).updatedAt(LocalDateTime.now())
 					.build();
@@ -93,6 +103,63 @@ public class NoteServiceImpl implements NoteService {
 		}
 		return NoteDto.builder().body(details.getBody()).noteId(details.getNoteId()).title(details.getTitle())
 				.userId(details.getUserId()).images(imgDtos).build();
+	}
+
+	@Override
+	public Object getAllNotesOfUser(HttpServletRequest request) {
+		String token = jwtService.extractActualTokenFromBearerAuth(request.getHeader("Authorization"));
+		String userId = jwtService.extractUserId(token);
+		List<NotesDetail> notes = notesDetailRepository.getAllNotesByUserId(userId);
+		List<NoteDto> notesDto = new ArrayList<>();
+		for (NotesDetail note : notes) {
+			notesDto.add(convertNoteEntityToDto(note));
+		}
+		return notesDto;
+	}
+
+	@Override
+	public Object updateNotes(List<MultipartFile> files, String noteStr, Long noteId, HttpServletRequest request) {
+		NotesDetail note = notesDetailRepository.findById(noteId)
+				.orElseThrow(() -> new RuntimeException("Invalid note id"));
+		List<ImageDetail> images = note.getImages();
+		deleteImg(images);
+		imageDetailRepository.deleteAll(images);
+		List<ImageDetail> newImages = new ArrayList<ImageDetail>();
+		String token = jwtService.extractActualTokenFromBearerAuth(request.getHeader("Authorization"));
+		String userName = jwtService.extractUsername(token);
+		String userId = jwtService.extractUserId(token);
+		if (files != null && !files.isEmpty()) {
+			newImages = uploadFiles(files, userName, userId);
+		}
+		ObjectMapper objectMapper = new ObjectMapper();
+		NoteDto dto = objectMapper.readValue(noteStr, NoteDto.class);
+
+		NotesDetail notesDetail = NotesDetail.builder().noteId(noteId).title(dto.getTitle()).body(dto.getBody())
+				.userId(userId).createdAt(LocalDateTime.now()).updatedAt(LocalDateTime.now()).images(newImages).build();
+		newImages.forEach(x -> x.setNote(notesDetail));
+		NotesDetail savedNote = notesDetailRepository.save(notesDetail);
+		return convertNoteEntityToDto(savedNote);
+	}
+
+	@Override
+	public Object deleteNote(Long noteId, HttpServletRequest request) {
+		NotesDetail note = notesDetailRepository.findById(noteId)
+				.orElseThrow(() -> new RuntimeException("Invalid note id"));
+		List<ImageDetail> images = note.getImages();
+		deleteImg(images);
+		notesDetailRepository.delete(note);
+		return "Success";
+	}
+
+	private void deleteImg(List<ImageDetail> images) {
+		for (ImageDetail img : images) {
+			try {
+				Files.deleteIfExists(Paths.get(img.getImagePath()));
+			} catch (IOException e) {
+				log.info("getting error while deleting images from the folder");
+				e.printStackTrace();
+			}
+		}
 	}
 
 }

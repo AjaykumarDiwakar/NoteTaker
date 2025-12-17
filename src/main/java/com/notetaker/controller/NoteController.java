@@ -4,7 +4,11 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,13 +36,22 @@ public class NoteController {
 			HttpServletRequest request) {
 		log.info("inside add note for user: " + jwtService
 				.extractUsername(jwtService.extractActualTokenFromBearerAuth(request.getHeader("Authorization"))));
-//		if (files != null || !files.isEmpty()) {
-//			// save file related info --- means we are going to create Entity object for all
-//			// the files and store the file in folder
-//		}
-//		//The above method service will return a list of ImageEntity and then we will create a object of Note Entity and save it
-
 		return ResponseEntity.ok(noteService.addNote(files, note, request));
 	}
 
+	@GetMapping("/get-all-notes")
+	public ResponseEntity<?> getAllNotesOfUser(HttpServletRequest request) {
+		return ResponseEntity.ok(noteService.getAllNotesOfUser(request));
+	}
+
+	@PutMapping("/update-note/{note_id}")
+	public ResponseEntity<?> updateNoteHandler(@PathVariable("note_id") Long noteId,
+			@RequestPart List<MultipartFile> files, @RequestPart String note, HttpServletRequest request) {
+		return ResponseEntity.ok(noteService.updateNotes(files, note, noteId, request));
+	}
+
+	@DeleteMapping("/delete-note/{note_id}")
+	public ResponseEntity<?> deleteNoteHandler(@PathVariable("note_id") Long noteId, HttpServletRequest request) {
+		return ResponseEntity.ok(noteService.deleteNote(noteId, request));
+	}
 }
