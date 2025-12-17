@@ -13,6 +13,8 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.notetaker.auth.service.AuthFilterService;
+import com.notetaker.exception.CustomAccessDeniedHandler;
+import com.notetaker.exception.JwtAuthEntryPoint;
 
 @Configuration
 @RequiredArgsConstructor
@@ -20,23 +22,22 @@ import com.notetaker.auth.service.AuthFilterService;
 @EnableMethodSecurity
 public class SecurityConfiguration {
 
-    private final AuthFilterService authFilterService;
-    private final AuthenticationProvider authenticationProvider;
+	private final AuthFilterService authFilterService;
+	private final AuthenticationProvider authenticationProvider;
+	private final JwtAuthEntryPoint jwtAuthEntryPoint;
+	private final CustomAccessDeniedHandler customAccessDeniedHandler;
 
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
-                .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/v1/auth/**", "/forgotPassword/**", "/file/**")
-                        .permitAll()
-                        .anyRequest()
-                        .authenticated())
-                .sessionManagement(session -> session
-                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .authenticationProvider(authenticationProvider)
-                .addFilterBefore(authFilterService, UsernamePasswordAuthenticationFilter.class);
+	@Bean
+	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+		http.csrf(AbstractHttpConfigurer::disable)
+				.authorizeHttpRequests(auth -> auth.requestMatchers("/api/v1/auth/**", "/forgotPassword/**", "/file/**")
+						.permitAll().anyRequest().authenticated())
+				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+				.authenticationProvider(authenticationProvider)
+				.addFilterBefore(authFilterService, UsernamePasswordAuthenticationFilter.class)
+				.exceptionHandling(ex -> ex.authenticationEntryPoint(jwtAuthEntryPoint)
+						.accessDeniedHandler(customAccessDeniedHandler));
 
-        return http.build();
-    }
+		return http.build();
+	}
 }
