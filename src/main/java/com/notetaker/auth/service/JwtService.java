@@ -47,6 +47,11 @@ public class JwtService {
 		return extractClaim(token, claims -> claims.get("userId", String.class));
 	}
 
+	// ------------------- Extract name ----------
+	public String extractName(String token) {
+		return extractClaim(token, claims -> claims.get("name", String.class));
+	}
+
 	// ------------------ Extract Username (Name) ------------------
 	public String extractUsername(String token) {
 		return extractClaim(token, claims -> claims.get("username", String.class));
@@ -80,7 +85,7 @@ public class JwtService {
 		extraClaims.put("username", user.getActualUsername());
 		extraClaims.put("email", user.getEmail());
 		extraClaims.put("role", userDetails.getAuthorities());
-
+		extraClaims.put("name", user.getName());
 		return Jwts.builder().setClaims(extraClaims).setSubject(userDetails.getUsername())
 				.setIssuedAt(new Date(System.currentTimeMillis()))
 				.setExpiration(new Date(System.currentTimeMillis() + 25 * 100000))

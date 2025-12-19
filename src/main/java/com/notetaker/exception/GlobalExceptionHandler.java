@@ -8,11 +8,6 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-	@ExceptionHandler(MovieNotFoundException.class)
-	public ProblemDetail handleMovieNotFoundException(MovieNotFoundException ex) {
-		return ProblemDetail.forStatusAndDetail(HttpStatus.NOT_FOUND, ex.getMessage());
-	}
-
 	@ExceptionHandler(EmptyFileException.class)
 	public ProblemDetail handleEmptyFileException(EmptyFileException ex) {
 		return ProblemDetail.forStatusAndDetail(HttpStatus.NOT_FOUND, ex.getMessage());
