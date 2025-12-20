@@ -5,9 +5,11 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.text.MessageFormat;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,10 +18,15 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.notetaker.auth.service.JwtService;
+import com.notetaker.constant.NoteTakerConstants;
+import com.notetaker.constant.NotificationCategory;
+import com.notetaker.constant.NotificationSettingKeys;
 import com.notetaker.dto.ImageDto;
+import com.notetaker.dto.MailBody;
 import com.notetaker.dto.NoteDto;
 import com.notetaker.entity.ImageDetail;
 import com.notetaker.entity.NotesDetail;
+import com.notetaker.entity.NotificationTemplates;
 import com.notetaker.repository.ImageDetailRepository;
 import com.notetaker.repository.NotesDetailRepository;
 
@@ -42,9 +49,18 @@ public class NoteServiceImpl implements NoteService {
 
 	@Autowired
 	private NotesDetailRepository notesDetailRepository;
-	
+
 	@Autowired
 	private ImageDetailRepository imageDetailRepository;
+
+	@Autowired
+	private NotificationService notificationService;
+
+	@Autowired
+	private NotificationSettingService notificationSettingService;
+
+	@Autowired
+	private EmailService emailService;
 
 	@Override
 	public Object addNote(List<MultipartFile> files, String note, HttpServletRequest request) {
@@ -53,6 +69,8 @@ public class NoteServiceImpl implements NoteService {
 		String userName = jwtService.extractUsername(token);
 		String userId = jwtService.extractUserId(token);
 		String email = jwtService.extractEmail(token);
+		String name = jwtService.extractName(token);
+		String role = jwtService.extractRole(token);
 		if (files != null && !files.isEmpty()) {
 			images = uploadFiles(files, userName, userId);
 		}
@@ -62,6 +80,9 @@ public class NoteServiceImpl implements NoteService {
 				.createdAt(LocalDateTime.now()).updatedAt(LocalDateTime.now()).images(images).build();
 		images.forEach(x -> x.setNote(notesDetail));
 		NotesDetail savedNote = notesDetailRepository.save(notesDetail);
+		sendAddNoeNotificationOnEMail(NotificationCategory.EMAIL.name(), userId, List
+				.of(NotificationSettingKeys.ALLOW_EMAIL_NOTIFICATIONS, NotificationSettingKeys.EMAIL_ON_ADD_NOTE_KEY),
+				email, notesDetail, name, role);
 		return convertNoteEntityToDto(savedNote);
 	}
 
@@ -159,6 +180,27 @@ public class NoteServiceImpl implements NoteService {
 				log.info("getting error while deleting images from the folder");
 				e.printStackTrace();
 			}
+		}
+	}
+
+	private void sendAddNoeNotificationOnEMail(String category, String userId, List<String> keys, String email,
+			NotesDetail notesDetail, String name, String role) {
+		Map<String, Boolean> settingMap = notificationSettingService
+				.getSettingByeKeyAndCategoryForUser(NotificationCategory.EMAIL.name(), userId, keys);
+		if (settingMap.getOrDefault(NotificationSettingKeys.ALLOW_EMAIL_NOTIFICATIONS, false)
+				&& settingMap.getOrDefault(NotificationSettingKeys.EMAIL_ON_ADD_NOTE_KEY, false)) {
+			NotificationTemplates tem = notificationService
+					.getNotificationTemplateByEventName(NoteTakerConstants.NOTIFICATION_ON_ADD_NOTE_EVENT, category);
+			if (tem == null) {
+				log.info("no email template found for add note event");
+				return;
+			}
+			Object[] args = { notesDetail.getTitle(), name, notesDetail.getCreatedAt() };
+			MailBody mailBody = MailBody.builder().to(email).subject(MessageFormat.format(tem.getSubject(), args))
+					.text(MessageFormat.format(tem.getMessageText(), args)).build();
+			emailService.sendSimpleMessage(mailBody);
+			notificationService.addNotificationHistoryInDbForEmail(mailBody, userId,
+					NoteTakerConstants.NOTIFICATION_ON_ADD_NOTE_EVENT, role);
 		}
 	}
 

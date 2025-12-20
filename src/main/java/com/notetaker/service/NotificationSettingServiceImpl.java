@@ -16,10 +16,12 @@ import com.notetaker.entity.NotificationSetting;
 import com.notetaker.repository.NotificationSettingRepository;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
+@Transactional
 public class NotificationSettingServiceImpl implements NotificationSettingService {
 
 	@Autowired
@@ -34,7 +36,7 @@ public class NotificationSettingServiceImpl implements NotificationSettingServic
 		String userId = jwtService.extractUserId(token);
 		log.info("fetching setting of category : " + category + " for userId : " + userId);
 		List<NotificationSetting> settings = notificationSettingRepository
-				.getNotificationSettingsByCategoryForUser(category, userId);
+				.getNotificationSettingsByCategoryForUser(NotificationCategory.valueOf(category), userId);
 		Map<String, Boolean> defaultSetting = NotificationSettingKeys.SETTING_MAP
 				.get(NotificationCategory.valueOf(category));
 		Map<String, Boolean> settingMap = settings.stream().collect(
@@ -62,7 +64,7 @@ public class NotificationSettingServiceImpl implements NotificationSettingServic
 		}
 
 		List<NotificationSetting> dbSettings = notificationSettingRepository
-				.getNotificationSettingsByCategoryForUser(category, userId);
+				.getNotificationSettingsByCategoryForUser(NotificationCategory.valueOf(category), userId);
 		Map<String, NotificationSetting> dbSettingMap = dbSettings.stream()
 				.collect(Collectors.toMap(NotificationSetting::getSettingKey, Function.identity(), (x, y) -> x));
 		for (Map.Entry<String, Boolean> entry : defaultSetting.entrySet()) {
@@ -93,7 +95,8 @@ public class NotificationSettingServiceImpl implements NotificationSettingServic
 	@Override
 	public Map<String, Boolean> getSettingByeKeyAndCategoryForUser(String category, String userId, List<String> keys) {
 
-		return notificationSettingRepository.getSettingByKeyAndCategoryForUser(category, userId, keys).stream()
+		return notificationSettingRepository
+				.getSettingByKeyAndCategoryForUser(NotificationCategory.valueOf(category), userId, keys).stream()
 				.collect(Collectors.toMap(x -> x.getSettingKey(), x -> x.isSettingValue(), (a, b) -> a));
 	}
 
