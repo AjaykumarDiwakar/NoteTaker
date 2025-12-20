@@ -5828,3 +5828,2677 @@ Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Da
         (category, created_at, event_name, message_text, subject, user_id, user_role, template_id) 
     values
         (?, ?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:09:39 [restartedMain] INFO  com.notetaker.NoteTakerApplication - Starting NoteTakerApplication using Java 23 with PID 23848 (D:\STSPROJECTS\NoteTaker\target\classes started by ASUS in D:\STSPROJECTS\NoteTaker)
+2025-12-20 23:09:39 [restartedMain] INFO  com.notetaker.NoteTakerApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-20 23:09:39 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-20 23:09:39 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-20 23:09:40 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-20 23:09:40 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 75 ms. Found 7 JPA repository interfaces.
+2025-12-20 23:09:41 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 9898 (http)
+2025-12-20 23:09:41 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9898"]
+2025-12-20 23:09:41 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-20 23:09:41 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2025-12-20 23:09:41 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 2103 ms
+2025-12-20 23:09:41 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-12-20 23:09:42 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@45a705b9
+2025-12-20 23:09:42 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-12-20 23:09:42 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-20 23:09:42 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 7.1.8.Final
+2025-12-20 23:09:43 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-20 23:09:43 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-20 23:09:43 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/notetaker]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.40
+	Default catalog/schema: notetaker/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DatasourceConnectionProviderImpl
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-20 23:09:44 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-20 23:09:44 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-20 23:09:44 [restartedMain] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-20 23:09:45 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-12-20 23:09:45 [restartedMain] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-12-20 23:09:45 [restartedMain] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-20 23:09:45 [restartedMain] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-12-20 23:09:46 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-12-20 23:09:46 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9898"]
+2025-12-20 23:09:46 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 9898 (http) with context path '/'
+2025-12-20 23:09:46 [restartedMain] INFO  com.notetaker.NoteTakerApplication - Started NoteTakerApplication in 7.636 seconds (process running for 8.279)
+2025-12-20 23:09:54 [http-nio-9898-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-20 23:09:54 [http-nio-9898-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-20 23:09:54 [http-nio-9898-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-12-20 23:09:54 [http-nio-9898-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+io.jsonwebtoken.ExpiredJwtException: JWT expired at 2025-12-20T07:01:26Z. Current time: 2025-12-20T17:39:54Z, a difference of 38308711 milliseconds.  Allowed clock skew: 0 milliseconds.
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:427)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:529)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJws(DefaultJwtParser.java:589)
+	at io.jsonwebtoken.impl.ImmutableJwtParser.parseClaimsJws(ImmutableJwtParser.java:173)
+	at com.notetaker.auth.service.JwtService.extractAllClaims(JwtService.java:73)
+	at com.notetaker.auth.service.JwtService.extractClaim(JwtService.java:67)
+	at com.notetaker.auth.service.JwtService.extractEmail(JwtService.java:42)
+	at com.notetaker.auth.service.AuthFilterService.doFilterInternal(AuthFilterService.java:48)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1778)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2025-12-20 23:10:23 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-12-20 23:10:23 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        rt1_0.id,
+        rt1_0.expiration_time,
+        rt1_0.refresh_token,
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        refresh_token rt1_0 
+    left join
+        users u1_0 
+            on u1_0.id=rt1_0.user_id 
+    where
+        rt1_0.user_id=?
+2025-12-20 23:10:23 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-12-20 23:10:23 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-12-20 23:10:23 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        ns1_0.setting_id,
+        ns1_0.category,
+        ns1_0.created_at,
+        ns1_0.setting_key,
+        ns1_0.setting_value,
+        ns1_0.updated_at,
+        ns1_0.user_id 
+    from
+        tab_noti_setting_det ns1_0 
+    where
+        ns1_0.category=? 
+        and ns1_0.user_id=? 
+        and ns1_0.setting_key in (?, ?)
+2025-12-20 23:10:23 [http-nio-9898-exec-4] INFO  c.n.service.NotificationServiceImpl - inside fetching Notification template of category: EMAIL and event name: user_login_event
+2025-12-20 23:10:23 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        nt1_0.template_id,
+        nt1_0.category,
+        nt1_0.created_at,
+        nt1_0.event_name,
+        nt1_0.message_text,
+        nt1_0.status,
+        nt1_0.subject,
+        nt1_0.updated_at,
+        nt1_0.user_role 
+    from
+        tab_notification_template_det nt1_0 
+    where
+        nt1_0.category=? 
+        and nt1_0.event_name=? 
+        and nt1_0.status=1
+2025-12-20 23:10:30 [http-nio-9898-exec-4] INFO  c.n.service.NotificationServiceImpl - saving notification history for user: e7680bc0-7abe-417c-99e0-c4cb185121ee and the event name is : user_login_event
+2025-12-20 23:10:30 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        tab_noti_history_det_seq 
+    for
+        update
+2025-12-20 23:10:30 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    update
+        tab_noti_history_det_seq 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2025-12-20 23:10:30 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_noti_history_det
+        (category, created_at, event_name, message_text, subject, user_id, user_role, template_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:11:12 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-12-20 23:11:12 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        rt1_0.id,
+        rt1_0.expiration_time,
+        rt1_0.refresh_token,
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        refresh_token rt1_0 
+    left join
+        users u1_0 
+            on u1_0.id=rt1_0.user_id 
+    where
+        rt1_0.user_id=?
+2025-12-20 23:11:12 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-12-20 23:11:12 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-12-20 23:11:12 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        ns1_0.setting_id,
+        ns1_0.category,
+        ns1_0.created_at,
+        ns1_0.setting_key,
+        ns1_0.setting_value,
+        ns1_0.updated_at,
+        ns1_0.user_id 
+    from
+        tab_noti_setting_det ns1_0 
+    where
+        ns1_0.category=? 
+        and ns1_0.user_id=? 
+        and ns1_0.setting_key in (?, ?)
+2025-12-20 23:11:56 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-12-20 23:11:56 [Thread-1] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-20 23:11:56 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-9898"]
+2025-12-20 23:11:56 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-12-20 23:11:56 [Thread-1] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-9898"]
+2025-12-20 23:11:56 [Thread-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-20 23:11:56 [Thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-12-20 23:11:56 [Thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-12-20 23:11:56 [restartedMain] INFO  com.notetaker.NoteTakerApplication - Starting NoteTakerApplication using Java 23 with PID 23848 (D:\STSPROJECTS\NoteTaker\target\classes started by ASUS in D:\STSPROJECTS\NoteTaker)
+2025-12-20 23:11:56 [restartedMain] INFO  com.notetaker.NoteTakerApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-20 23:11:56 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-20 23:11:56 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 7 JPA repository interfaces.
+2025-12-20 23:11:57 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 9898 (http)
+2025-12-20 23:11:57 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9898"]
+2025-12-20 23:11:57 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-20 23:11:57 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2025-12-20 23:11:57 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 318 ms
+2025-12-20 23:11:57 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2025-12-20 23:11:57 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@45fc2262
+2025-12-20 23:11:57 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2025-12-20 23:11:57 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-20 23:11:57 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-20 23:11:57 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-20 23:11:57 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/notetaker]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.40
+	Default catalog/schema: notetaker/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DatasourceConnectionProviderImpl
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-20 23:11:57 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-20 23:11:57 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-20 23:11:57 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-12-20 23:11:57 [restartedMain] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-12-20 23:11:57 [restartedMain] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-20 23:11:57 [restartedMain] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-12-20 23:11:57 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-12-20 23:11:57 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9898"]
+2025-12-20 23:11:57 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 9898 (http) with context path '/'
+2025-12-20 23:11:57 [restartedMain] INFO  com.notetaker.NoteTakerApplication - Started NoteTakerApplication in 0.946 seconds (process running for 139.342)
+2025-12-20 23:11:57 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-12-20 23:14:00 [http-nio-9898-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-20 23:14:00 [http-nio-9898-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-20 23:14:00 [http-nio-9898-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-12-20 23:14:00 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-12-20 23:14:00 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        rt1_0.id,
+        rt1_0.expiration_time,
+        rt1_0.refresh_token,
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        refresh_token rt1_0 
+    left join
+        users u1_0 
+            on u1_0.id=rt1_0.user_id 
+    where
+        rt1_0.user_id=?
+2025-12-20 23:14:00 [http-nio-9898-exec-1] INFO  c.n.controller.NoteController - inside add note for user: Ak47
+2025-12-20 23:14:00 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        (count(nd1_0.note_id)>0) 
+    from
+        tab_notes_det nd1_0 
+    where
+        nd1_0.user_id=? 
+        and nd1_0.title=?
+2025-12-20 23:14:01 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_notes_det
+        (body, created_at, title, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?)
+2025-12-20 23:14:01 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:14:01 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:14:01 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:14:01 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:14:01 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:14:01 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:14:01 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:14:01 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        ns1_0.setting_id,
+        ns1_0.category,
+        ns1_0.created_at,
+        ns1_0.setting_key,
+        ns1_0.setting_value,
+        ns1_0.updated_at,
+        ns1_0.user_id 
+    from
+        tab_noti_setting_det ns1_0 
+    where
+        ns1_0.category=? 
+        and ns1_0.user_id=? 
+        and ns1_0.setting_key in (?, ?)
+2025-12-20 23:14:01 [http-nio-9898-exec-1] INFO  c.n.service.NotificationServiceImpl - inside fetching Notification template of category: EMAIL and event name: note_add_event
+2025-12-20 23:14:01 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        nt1_0.template_id,
+        nt1_0.category,
+        nt1_0.created_at,
+        nt1_0.event_name,
+        nt1_0.message_text,
+        nt1_0.status,
+        nt1_0.subject,
+        nt1_0.updated_at,
+        nt1_0.user_role 
+    from
+        tab_notification_template_det nt1_0 
+    where
+        nt1_0.category=? 
+        and nt1_0.event_name=? 
+        and nt1_0.status=1
+2025-12-20 23:14:07 [http-nio-9898-exec-1] INFO  c.n.service.NotificationServiceImpl - saving notification history for user: e7680bc0-7abe-417c-99e0-c4cb185121ee and the event name is : note_add_event
+2025-12-20 23:14:07 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        tab_noti_history_det_seq 
+    for
+        update
+2025-12-20 23:14:07 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    update
+        tab_noti_history_det_seq 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2025-12-20 23:14:07 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_noti_history_det
+        (category, created_at, event_name, message_text, subject, user_id, user_role, template_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:14:23 [http-nio-9898-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-12-20 23:14:23 [http-nio-9898-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        rt1_0.id,
+        rt1_0.expiration_time,
+        rt1_0.refresh_token,
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        refresh_token rt1_0 
+    left join
+        users u1_0 
+            on u1_0.id=rt1_0.user_id 
+    where
+        rt1_0.user_id=?
+2025-12-20 23:14:23 [http-nio-9898-exec-3] INFO  c.n.controller.NoteController - inside add note for user: Ak47
+2025-12-20 23:14:23 [http-nio-9898-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        (count(nd1_0.note_id)>0) 
+    from
+        tab_notes_det nd1_0 
+    where
+        nd1_0.user_id=? 
+        and nd1_0.title=?
+2025-12-20 23:14:23 [http-nio-9898-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.RuntimeException: Duplicate title is not allowed]
+2025-12-20 23:16:00 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-12-20 23:16:00 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        rt1_0.id,
+        rt1_0.expiration_time,
+        rt1_0.refresh_token,
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        refresh_token rt1_0 
+    left join
+        users u1_0 
+            on u1_0.id=rt1_0.user_id 
+    where
+        rt1_0.user_id=?
+2025-12-20 23:16:01 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        nd1_0.note_id,
+        nd1_0.body,
+        nd1_0.created_at,
+        nd1_0.title,
+        nd1_0.updated_at,
+        nd1_0.user_id 
+    from
+        tab_notes_det nd1_0 
+    where
+        nd1_0.note_id=?
+2025-12-20 23:16:01 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.note_id,
+        i1_0.image_id,
+        i1_0.created_at,
+        i1_0.image_name,
+        i1_0.image_path,
+        i1_0.image_url,
+        i1_0.updated_at,
+        i1_0.user_id 
+    from
+        tab_image_det i1_0 
+    where
+        i1_0.note_id=?
+2025-12-20 23:16:01 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:16:01 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:16:01 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:16:01 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:16:01 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:16:01 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:16:01 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:16:01 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_notes_det 
+    where
+        note_id=?
+2025-12-20 23:16:01 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        ns1_0.setting_id,
+        ns1_0.category,
+        ns1_0.created_at,
+        ns1_0.setting_key,
+        ns1_0.setting_value,
+        ns1_0.updated_at,
+        ns1_0.user_id 
+    from
+        tab_noti_setting_det ns1_0 
+    where
+        ns1_0.category=? 
+        and ns1_0.user_id=? 
+        and ns1_0.setting_key in (?, ?)
+2025-12-20 23:16:01 [http-nio-9898-exec-5] INFO  c.n.service.NotificationServiceImpl - inside fetching Notification template of category: EMAIL and event name: note_delete_event
+2025-12-20 23:16:01 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        nt1_0.template_id,
+        nt1_0.category,
+        nt1_0.created_at,
+        nt1_0.event_name,
+        nt1_0.message_text,
+        nt1_0.status,
+        nt1_0.subject,
+        nt1_0.updated_at,
+        nt1_0.user_role 
+    from
+        tab_notification_template_det nt1_0 
+    where
+        nt1_0.category=? 
+        and nt1_0.event_name=? 
+        and nt1_0.status=1
+2025-12-20 23:16:08 [http-nio-9898-exec-5] INFO  c.n.service.NotificationServiceImpl - saving notification history for user: e7680bc0-7abe-417c-99e0-c4cb185121ee and the event name is : note_delete_event
+2025-12-20 23:16:08 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_noti_history_det
+        (category, created_at, event_name, message_text, subject, user_id, user_role, template_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:18:47 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-12-20 23:18:47 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        rt1_0.id,
+        rt1_0.expiration_time,
+        rt1_0.refresh_token,
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        refresh_token rt1_0 
+    left join
+        users u1_0 
+            on u1_0.id=rt1_0.user_id 
+    where
+        rt1_0.user_id=?
+2025-12-20 23:18:47 [http-nio-9898-exec-8] INFO  c.n.controller.NoteController - inside add note for user: Ak47
+2025-12-20 23:18:47 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        (count(nd1_0.note_id)>0) 
+    from
+        tab_notes_det nd1_0 
+    where
+        nd1_0.user_id=? 
+        and nd1_0.title=?
+2025-12-20 23:18:47 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_notes_det
+        (body, created_at, title, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?)
+2025-12-20 23:18:47 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:18:47 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:18:47 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:18:47 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:18:47 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:18:47 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:18:47 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:18:47 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        ns1_0.setting_id,
+        ns1_0.category,
+        ns1_0.created_at,
+        ns1_0.setting_key,
+        ns1_0.setting_value,
+        ns1_0.updated_at,
+        ns1_0.user_id 
+    from
+        tab_noti_setting_det ns1_0 
+    where
+        ns1_0.category=? 
+        and ns1_0.user_id=? 
+        and ns1_0.setting_key in (?, ?)
+2025-12-20 23:18:47 [http-nio-9898-exec-8] INFO  c.n.service.NotificationServiceImpl - inside fetching Notification template of category: EMAIL and event name: note_add_event
+2025-12-20 23:18:47 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        nt1_0.template_id,
+        nt1_0.category,
+        nt1_0.created_at,
+        nt1_0.event_name,
+        nt1_0.message_text,
+        nt1_0.status,
+        nt1_0.subject,
+        nt1_0.updated_at,
+        nt1_0.user_role 
+    from
+        tab_notification_template_det nt1_0 
+    where
+        nt1_0.category=? 
+        and nt1_0.event_name=? 
+        and nt1_0.status=1
+2025-12-20 23:18:54 [http-nio-9898-exec-8] INFO  c.n.service.NotificationServiceImpl - saving notification history for user: e7680bc0-7abe-417c-99e0-c4cb185121ee and the event name is : note_add_event
+2025-12-20 23:18:54 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_noti_history_det
+        (category, created_at, event_name, message_text, subject, user_id, user_role, template_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:19:11 [http-nio-9898-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-12-20 23:19:11 [http-nio-9898-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        rt1_0.id,
+        rt1_0.expiration_time,
+        rt1_0.refresh_token,
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        refresh_token rt1_0 
+    left join
+        users u1_0 
+            on u1_0.id=rt1_0.user_id 
+    where
+        rt1_0.user_id=?
+2025-12-20 23:19:11 [http-nio-9898-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
+2025-12-20 23:19:23 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-12-20 23:19:23 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        rt1_0.id,
+        rt1_0.expiration_time,
+        rt1_0.refresh_token,
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        refresh_token rt1_0 
+    left join
+        users u1_0 
+            on u1_0.id=rt1_0.user_id 
+    where
+        rt1_0.user_id=?
+2025-12-20 23:19:23 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        nd1_0.note_id,
+        nd1_0.body,
+        nd1_0.created_at,
+        nd1_0.title,
+        nd1_0.updated_at,
+        nd1_0.user_id 
+    from
+        tab_notes_det nd1_0 
+    where
+        nd1_0.note_id=?
+2025-12-20 23:19:23 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.note_id,
+        i1_0.image_id,
+        i1_0.created_at,
+        i1_0.image_name,
+        i1_0.image_path,
+        i1_0.image_url,
+        i1_0.updated_at,
+        i1_0.user_id 
+    from
+        tab_image_det i1_0 
+    where
+        i1_0.note_id=?
+2025-12-20 23:19:23 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:19:23 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:19:23 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:19:23 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:19:23 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:19:23 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:19:23 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:19:23 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    update
+        tab_notes_det 
+    set
+        body=?,
+        created_at=?,
+        title=?,
+        updated_at=?,
+        user_id=? 
+    where
+        note_id=?
+2025-12-20 23:19:23 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:19:23 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:19:24 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:19:24 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:19:24 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:19:24 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:19:24 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:19:24 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        ns1_0.setting_id,
+        ns1_0.category,
+        ns1_0.created_at,
+        ns1_0.setting_key,
+        ns1_0.setting_value,
+        ns1_0.updated_at,
+        ns1_0.user_id 
+    from
+        tab_noti_setting_det ns1_0 
+    where
+        ns1_0.category=? 
+        and ns1_0.user_id=? 
+        and ns1_0.setting_key in (?, ?)
+2025-12-20 23:20:48 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-12-20 23:20:48 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        rt1_0.id,
+        rt1_0.expiration_time,
+        rt1_0.refresh_token,
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        refresh_token rt1_0 
+    left join
+        users u1_0 
+            on u1_0.id=rt1_0.user_id 
+    where
+        rt1_0.user_id=?
+2025-12-20 23:20:48 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        nd1_0.note_id,
+        nd1_0.body,
+        nd1_0.created_at,
+        nd1_0.title,
+        nd1_0.updated_at,
+        nd1_0.user_id 
+    from
+        tab_notes_det nd1_0 
+    where
+        nd1_0.note_id=?
+2025-12-20 23:20:48 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.note_id,
+        i1_0.image_id,
+        i1_0.created_at,
+        i1_0.image_name,
+        i1_0.image_path,
+        i1_0.image_url,
+        i1_0.updated_at,
+        i1_0.user_id 
+    from
+        tab_image_det i1_0 
+    where
+        i1_0.note_id=?
+2025-12-20 23:20:48 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:20:48 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:20:48 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:20:48 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:20:48 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:20:48 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:20:48 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:20:48 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    update
+        tab_notes_det 
+    set
+        body=?,
+        created_at=?,
+        title=?,
+        updated_at=?,
+        user_id=? 
+    where
+        note_id=?
+2025-12-20 23:20:48 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:20:48 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:20:48 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:20:48 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:20:48 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:20:48 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:20:48 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:20:48 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        ns1_0.setting_id,
+        ns1_0.category,
+        ns1_0.created_at,
+        ns1_0.setting_key,
+        ns1_0.setting_value,
+        ns1_0.updated_at,
+        ns1_0.user_id 
+    from
+        tab_noti_setting_det ns1_0 
+    where
+        ns1_0.category=? 
+        and ns1_0.user_id=? 
+        and ns1_0.setting_key in (?, ?)
+2025-12-20 23:21:14 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-12-20 23:21:14 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        rt1_0.id,
+        rt1_0.expiration_time,
+        rt1_0.refresh_token,
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        refresh_token rt1_0 
+    left join
+        users u1_0 
+            on u1_0.id=rt1_0.user_id 
+    where
+        rt1_0.user_id=?
+2025-12-20 23:21:14 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        nd1_0.note_id,
+        nd1_0.body,
+        nd1_0.created_at,
+        nd1_0.title,
+        nd1_0.updated_at,
+        nd1_0.user_id 
+    from
+        tab_notes_det nd1_0 
+    where
+        nd1_0.note_id=?
+2025-12-20 23:21:14 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.note_id,
+        i1_0.image_id,
+        i1_0.created_at,
+        i1_0.image_name,
+        i1_0.image_path,
+        i1_0.image_url,
+        i1_0.updated_at,
+        i1_0.user_id 
+    from
+        tab_image_det i1_0 
+    where
+        i1_0.note_id=?
+2025-12-20 23:21:14 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:21:14 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:21:14 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:21:14 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:21:14 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:21:14 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:21:14 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:21:14 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    update
+        tab_notes_det 
+    set
+        body=?,
+        created_at=?,
+        title=?,
+        updated_at=?,
+        user_id=? 
+    where
+        note_id=?
+2025-12-20 23:21:14 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:21:14 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:21:14 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:21:14 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:21:14 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:21:14 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:21:14 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:21:14 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        ns1_0.setting_id,
+        ns1_0.category,
+        ns1_0.created_at,
+        ns1_0.setting_key,
+        ns1_0.setting_value,
+        ns1_0.updated_at,
+        ns1_0.user_id 
+    from
+        tab_noti_setting_det ns1_0 
+    where
+        ns1_0.category=? 
+        and ns1_0.user_id=? 
+        and ns1_0.setting_key in (?, ?)
+2025-12-20 23:22:31 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-12-20 23:22:31 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        rt1_0.id,
+        rt1_0.expiration_time,
+        rt1_0.refresh_token,
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        refresh_token rt1_0 
+    left join
+        users u1_0 
+            on u1_0.id=rt1_0.user_id 
+    where
+        rt1_0.user_id=?
+2025-12-20 23:22:31 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        nd1_0.note_id,
+        nd1_0.body,
+        nd1_0.created_at,
+        nd1_0.title,
+        nd1_0.updated_at,
+        nd1_0.user_id 
+    from
+        tab_notes_det nd1_0 
+    where
+        nd1_0.note_id=?
+2025-12-20 23:22:31 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.note_id,
+        i1_0.image_id,
+        i1_0.created_at,
+        i1_0.image_name,
+        i1_0.image_path,
+        i1_0.image_url,
+        i1_0.updated_at,
+        i1_0.user_id 
+    from
+        tab_image_det i1_0 
+    where
+        i1_0.note_id=?
+2025-12-20 23:22:32 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:22:32 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:22:32 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:22:32 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:22:32 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:22:32 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:22:32 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:22:32 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    update
+        tab_notes_det 
+    set
+        body=?,
+        created_at=?,
+        title=?,
+        updated_at=?,
+        user_id=? 
+    where
+        note_id=?
+2025-12-20 23:22:32 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:22:32 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:22:32 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:22:32 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:22:32 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:22:32 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:22:32 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:22:32 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        ns1_0.setting_id,
+        ns1_0.category,
+        ns1_0.created_at,
+        ns1_0.setting_key,
+        ns1_0.setting_value,
+        ns1_0.updated_at,
+        ns1_0.user_id 
+    from
+        tab_noti_setting_det ns1_0 
+    where
+        ns1_0.category=? 
+        and ns1_0.user_id=? 
+        and ns1_0.setting_key in (?, ?)
+2025-12-20 23:24:13 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-12-20 23:24:13 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        rt1_0.id,
+        rt1_0.expiration_time,
+        rt1_0.refresh_token,
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        refresh_token rt1_0 
+    left join
+        users u1_0 
+            on u1_0.id=rt1_0.user_id 
+    where
+        rt1_0.user_id=?
+2025-12-20 23:24:13 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        nd1_0.note_id,
+        nd1_0.body,
+        nd1_0.created_at,
+        nd1_0.title,
+        nd1_0.updated_at,
+        nd1_0.user_id 
+    from
+        tab_notes_det nd1_0 
+    where
+        nd1_0.note_id=?
+2025-12-20 23:24:13 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.note_id,
+        i1_0.image_id,
+        i1_0.created_at,
+        i1_0.image_name,
+        i1_0.image_path,
+        i1_0.image_url,
+        i1_0.updated_at,
+        i1_0.user_id 
+    from
+        tab_image_det i1_0 
+    where
+        i1_0.note_id=?
+2025-12-20 23:24:13 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:24:13 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:24:13 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:24:13 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:24:13 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:24:13 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:24:13 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:24:13 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    update
+        tab_notes_det 
+    set
+        body=?,
+        created_at=?,
+        title=?,
+        updated_at=?,
+        user_id=? 
+    where
+        note_id=?
+2025-12-20 23:24:13 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:24:13 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:24:13 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:24:13 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:24:13 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:24:13 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:24:13 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:24:13 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        ns1_0.setting_id,
+        ns1_0.category,
+        ns1_0.created_at,
+        ns1_0.setting_key,
+        ns1_0.setting_value,
+        ns1_0.updated_at,
+        ns1_0.user_id 
+    from
+        tab_noti_setting_det ns1_0 
+    where
+        ns1_0.category=? 
+        and ns1_0.user_id=? 
+        and ns1_0.setting_key in (?, ?)
+2025-12-20 23:24:13 [http-nio-9898-exec-2] INFO  c.n.service.NotificationServiceImpl - inside fetching Notification template of category: EMAIL and event name: note_update_event
+2025-12-20 23:24:13 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        nt1_0.template_id,
+        nt1_0.category,
+        nt1_0.created_at,
+        nt1_0.event_name,
+        nt1_0.message_text,
+        nt1_0.status,
+        nt1_0.subject,
+        nt1_0.updated_at,
+        nt1_0.user_role 
+    from
+        tab_notification_template_det nt1_0 
+    where
+        nt1_0.category=? 
+        and nt1_0.event_name=? 
+        and nt1_0.status=1
+2025-12-20 23:24:19 [http-nio-9898-exec-2] INFO  c.n.service.NotificationServiceImpl - saving notification history for user: e7680bc0-7abe-417c-99e0-c4cb185121ee and the event name is : note_update_event
+2025-12-20 23:24:19 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_noti_history_det
+        (category, created_at, event_name, message_text, subject, user_id, user_role, template_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:29:50 [restartedMain] INFO  com.notetaker.NoteTakerApplication - Starting NoteTakerApplication using Java 23 with PID 684 (D:\STSPROJECTS\NoteTaker\target\classes started by ASUS in D:\STSPROJECTS\NoteTaker)
+2025-12-20 23:29:50 [restartedMain] INFO  com.notetaker.NoteTakerApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-20 23:29:50 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-20 23:29:50 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-20 23:29:51 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-20 23:29:51 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 57 ms. Found 7 JPA repository interfaces.
+2025-12-20 23:29:51 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 9898 (http)
+2025-12-20 23:29:52 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9898"]
+2025-12-20 23:29:52 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-20 23:29:52 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2025-12-20 23:29:52 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1914 ms
+2025-12-20 23:29:52 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-12-20 23:29:53 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@213fb0d7
+2025-12-20 23:29:53 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-12-20 23:29:53 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-20 23:29:53 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 7.1.8.Final
+2025-12-20 23:29:54 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-20 23:29:54 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-20 23:29:54 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/notetaker]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.40
+	Default catalog/schema: notetaker/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DatasourceConnectionProviderImpl
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-20 23:29:55 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-20 23:29:55 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-20 23:29:55 [restartedMain] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-20 23:29:57 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-12-20 23:29:57 [restartedMain] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-12-20 23:29:57 [restartedMain] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-20 23:29:58 [restartedMain] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-12-20 23:29:59 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-12-20 23:29:59 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9898"]
+2025-12-20 23:29:59 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 9898 (http) with context path '/'
+2025-12-20 23:29:59 [restartedMain] INFO  com.notetaker.NoteTakerApplication - Started NoteTakerApplication in 9.51 seconds (process running for 10.023)
+2025-12-20 23:30:23 [http-nio-9898-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-20 23:30:23 [http-nio-9898-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-20 23:30:23 [http-nio-9898-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-12-20 23:30:24 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-12-20 23:30:24 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        rt1_0.id,
+        rt1_0.expiration_time,
+        rt1_0.refresh_token,
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        refresh_token rt1_0 
+    left join
+        users u1_0 
+            on u1_0.id=rt1_0.user_id 
+    where
+        rt1_0.user_id=?
+2025-12-20 23:30:24 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        nd1_0.note_id,
+        nd1_0.body,
+        nd1_0.created_at,
+        nd1_0.title,
+        nd1_0.updated_at,
+        nd1_0.user_id 
+    from
+        tab_notes_det nd1_0 
+    where
+        nd1_0.note_id=? 
+        and nd1_0.user_id=?
+2025-12-20 23:30:24 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.note_id,
+        i1_0.image_id,
+        i1_0.created_at,
+        i1_0.image_name,
+        i1_0.image_path,
+        i1_0.image_url,
+        i1_0.updated_at,
+        i1_0.user_id 
+    from
+        tab_image_det i1_0 
+    where
+        i1_0.note_id=?
+2025-12-20 23:30:24 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:30:24 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:30:24 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:30:24 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:30:24 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:30:24 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:30:24 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:30:24 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    update
+        tab_notes_det 
+    set
+        body=?,
+        created_at=?,
+        title=?,
+        updated_at=?,
+        user_id=? 
+    where
+        note_id=?
+2025-12-20 23:30:24 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:30:24 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:30:24 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:30:24 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:30:24 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:30:24 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:30:24 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:30:24 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        ns1_0.setting_id,
+        ns1_0.category,
+        ns1_0.created_at,
+        ns1_0.setting_key,
+        ns1_0.setting_value,
+        ns1_0.updated_at,
+        ns1_0.user_id 
+    from
+        tab_noti_setting_det ns1_0 
+    where
+        ns1_0.category=? 
+        and ns1_0.user_id=? 
+        and ns1_0.setting_key in (?, ?)
+2025-12-20 23:30:24 [http-nio-9898-exec-1] INFO  c.n.service.NotificationServiceImpl - inside fetching Notification template of category: EMAIL and event name: note_update_event
+2025-12-20 23:30:24 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        nt1_0.template_id,
+        nt1_0.category,
+        nt1_0.created_at,
+        nt1_0.event_name,
+        nt1_0.message_text,
+        nt1_0.status,
+        nt1_0.subject,
+        nt1_0.updated_at,
+        nt1_0.user_role 
+    from
+        tab_notification_template_det nt1_0 
+    where
+        nt1_0.category=? 
+        and nt1_0.event_name=? 
+        and nt1_0.status=1
+2025-12-20 23:30:30 [http-nio-9898-exec-1] INFO  c.n.service.NotificationServiceImpl - saving notification history for user: e7680bc0-7abe-417c-99e0-c4cb185121ee and the event name is : note_update_event
+2025-12-20 23:30:30 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        tab_noti_history_det_seq 
+    for
+        update
+2025-12-20 23:30:30 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    update
+        tab_noti_history_det_seq 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2025-12-20 23:30:30 [http-nio-9898-exec-1] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_noti_history_det
+        (category, created_at, event_name, message_text, subject, user_id, user_role, template_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:32:57 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-12-20 23:32:57 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        rt1_0.id,
+        rt1_0.expiration_time,
+        rt1_0.refresh_token,
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        refresh_token rt1_0 
+    left join
+        users u1_0 
+            on u1_0.id=rt1_0.user_id 
+    where
+        rt1_0.user_id=?
+2025-12-20 23:32:57 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        nd1_0.note_id,
+        nd1_0.body,
+        nd1_0.created_at,
+        nd1_0.title,
+        nd1_0.updated_at,
+        nd1_0.user_id 
+    from
+        tab_notes_det nd1_0 
+    where
+        nd1_0.note_id=? 
+        and nd1_0.user_id=?
+2025-12-20 23:32:57 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        i1_0.note_id,
+        i1_0.image_id,
+        i1_0.created_at,
+        i1_0.image_name,
+        i1_0.image_path,
+        i1_0.image_url,
+        i1_0.updated_at,
+        i1_0.user_id 
+    from
+        tab_image_det i1_0 
+    where
+        i1_0.note_id=?
+2025-12-20 23:32:58 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:32:58 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:32:58 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:32:58 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:32:58 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:32:58 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:32:58 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_image_det
+        (created_at, image_name, image_path, image_url, note_id, updated_at, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:32:58 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    update
+        tab_notes_det 
+    set
+        body=?,
+        created_at=?,
+        title=?,
+        updated_at=?,
+        user_id=? 
+    where
+        note_id=?
+2025-12-20 23:32:58 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:32:58 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:32:58 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:32:58 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:32:58 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:32:58 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:32:58 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        tab_image_det 
+    where
+        image_id=?
+2025-12-20 23:32:58 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        ns1_0.setting_id,
+        ns1_0.category,
+        ns1_0.created_at,
+        ns1_0.setting_key,
+        ns1_0.setting_value,
+        ns1_0.updated_at,
+        ns1_0.user_id 
+    from
+        tab_noti_setting_det ns1_0 
+    where
+        ns1_0.category=? 
+        and ns1_0.user_id=? 
+        and ns1_0.setting_key in (?, ?)
+2025-12-20 23:32:58 [http-nio-9898-exec-5] INFO  c.n.service.NotificationServiceImpl - inside fetching Notification template of category: EMAIL and event name: note_update_event
+2025-12-20 23:32:58 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        nt1_0.template_id,
+        nt1_0.category,
+        nt1_0.created_at,
+        nt1_0.event_name,
+        nt1_0.message_text,
+        nt1_0.status,
+        nt1_0.subject,
+        nt1_0.updated_at,
+        nt1_0.user_role 
+    from
+        tab_notification_template_det nt1_0 
+    where
+        nt1_0.category=? 
+        and nt1_0.event_name=? 
+        and nt1_0.status=1
+2025-12-20 23:33:03 [http-nio-9898-exec-5] INFO  c.n.service.NotificationServiceImpl - saving notification history for user: e7680bc0-7abe-417c-99e0-c4cb185121ee and the event name is : note_update_event
+2025-12-20 23:33:03 [http-nio-9898-exec-5] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_noti_history_det
+        (category, created_at, event_name, message_text, subject, user_id, user_role, template_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:34:41 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (username, email, name, password, user_role, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2025-12-20 23:34:41 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-12-20 23:34:41 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        refresh_token_seq 
+    for
+        update
+2025-12-20 23:34:41 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    update
+        refresh_token_seq 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2025-12-20 23:34:41 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        ns1_0.setting_id,
+        ns1_0.category,
+        ns1_0.created_at,
+        ns1_0.setting_key,
+        ns1_0.setting_value,
+        ns1_0.updated_at,
+        ns1_0.user_id 
+    from
+        tab_noti_setting_det ns1_0 
+    where
+        ns1_0.category=? 
+        and ns1_0.user_id=? 
+        and ns1_0.setting_key in (?)
+2025-12-20 23:34:41 [http-nio-9898-exec-8] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        refresh_token
+        (expiration_time, refresh_token, user_id, id) 
+    values
+        (?, ?, ?, ?)
+2025-12-20 23:39:56 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-12-20 23:39:56 [Thread-1] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-20 23:39:56 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-9898"]
+2025-12-20 23:39:56 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-12-20 23:39:56 [Thread-1] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-9898"]
+2025-12-20 23:39:56 [Thread-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-20 23:39:56 [Thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-12-20 23:39:56 [Thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-12-20 23:39:56 [restartedMain] INFO  com.notetaker.NoteTakerApplication - Starting NoteTakerApplication using Java 23 with PID 684 (D:\STSPROJECTS\NoteTaker\target\classes started by ASUS in D:\STSPROJECTS\NoteTaker)
+2025-12-20 23:39:56 [restartedMain] INFO  com.notetaker.NoteTakerApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-20 23:39:56 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-20 23:39:56 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 34 ms. Found 7 JPA repository interfaces.
+2025-12-20 23:39:57 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 9898 (http)
+2025-12-20 23:39:57 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9898"]
+2025-12-20 23:39:57 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-20 23:39:57 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2025-12-20 23:39:57 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 549 ms
+2025-12-20 23:39:57 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2025-12-20 23:39:57 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1267d8cf
+2025-12-20 23:39:57 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2025-12-20 23:39:57 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-20 23:39:57 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-20 23:39:57 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-20 23:39:57 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/notetaker]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.40
+	Default catalog/schema: notetaker/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DatasourceConnectionProviderImpl
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-20 23:39:57 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-20 23:39:57 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-20 23:39:57 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-12-20 23:39:57 [restartedMain] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-12-20 23:39:58 [restartedMain] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-20 23:39:58 [restartedMain] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-12-20 23:39:58 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-12-20 23:39:58 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9898"]
+2025-12-20 23:39:58 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 9898 (http) with context path '/'
+2025-12-20 23:39:58 [restartedMain] INFO  com.notetaker.NoteTakerApplication - Started NoteTakerApplication in 1.652 seconds (process running for 609.135)
+2025-12-20 23:39:58 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-12-20 23:40:01 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-12-20 23:40:01 [Thread-5] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-20 23:40:01 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-9898"]
+2025-12-20 23:40:01 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-12-20 23:40:01 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-9898"]
+2025-12-20 23:40:01 [Thread-5] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-20 23:40:01 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2025-12-20 23:40:01 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2025-12-20 23:40:01 [restartedMain] INFO  com.notetaker.NoteTakerApplication - Starting NoteTakerApplication using Java 23 with PID 684 (D:\STSPROJECTS\NoteTaker\target\classes started by ASUS in D:\STSPROJECTS\NoteTaker)
+2025-12-20 23:40:01 [restartedMain] INFO  com.notetaker.NoteTakerApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-20 23:40:02 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-20 23:40:02 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 39 ms. Found 7 JPA repository interfaces.
+2025-12-20 23:40:02 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 9898 (http)
+2025-12-20 23:40:02 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9898"]
+2025-12-20 23:40:02 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-20 23:40:02 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2025-12-20 23:40:02 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 552 ms
+2025-12-20 23:40:02 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+2025-12-20 23:40:02 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@236d9936
+2025-12-20 23:40:02 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+2025-12-20 23:40:02 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-20 23:40:02 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-20 23:40:02 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-20 23:40:02 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/notetaker]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.40
+	Default catalog/schema: notetaker/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DatasourceConnectionProviderImpl
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-20 23:40:02 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-20 23:40:02 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-20 23:40:02 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-12-20 23:40:02 [restartedMain] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-12-20 23:40:02 [restartedMain] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-20 23:40:03 [restartedMain] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-12-20 23:40:03 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-12-20 23:40:03 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9898"]
+2025-12-20 23:40:03 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 9898 (http) with context path '/'
+2025-12-20 23:40:03 [restartedMain] INFO  com.notetaker.NoteTakerApplication - Started NoteTakerApplication in 1.375 seconds (process running for 614.072)
+2025-12-20 23:40:03 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-12-20 23:40:04 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-12-20 23:40:04 [Thread-9] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-20 23:40:04 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-9898"]
+2025-12-20 23:40:04 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-12-20 23:40:04 [Thread-9] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-9898"]
+2025-12-20 23:40:04 [Thread-9] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-20 23:40:04 [Thread-9] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+2025-12-20 23:40:04 [Thread-9] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
+2025-12-20 23:40:04 [restartedMain] INFO  com.notetaker.NoteTakerApplication - Starting NoteTakerApplication using Java 23 with PID 684 (D:\STSPROJECTS\NoteTaker\target\classes started by ASUS in D:\STSPROJECTS\NoteTaker)
+2025-12-20 23:40:04 [restartedMain] INFO  com.notetaker.NoteTakerApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-20 23:40:04 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-20 23:40:04 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 41 ms. Found 7 JPA repository interfaces.
+2025-12-20 23:40:05 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 9898 (http)
+2025-12-20 23:40:05 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9898"]
+2025-12-20 23:40:05 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-20 23:40:05 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2025-12-20 23:40:05 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 418 ms
+2025-12-20 23:40:05 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Starting...
+2025-12-20 23:40:05 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@320cf202
+2025-12-20 23:40:05 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Start completed.
+2025-12-20 23:40:05 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-20 23:40:05 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-20 23:40:05 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-20 23:40:05 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/notetaker]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.40
+	Default catalog/schema: notetaker/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DatasourceConnectionProviderImpl
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-20 23:40:05 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-20 23:40:05 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-20 23:40:05 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-12-20 23:40:05 [restartedMain] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-12-20 23:40:05 [restartedMain] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-20 23:40:05 [restartedMain] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-12-20 23:40:05 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-12-20 23:40:05 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9898"]
+2025-12-20 23:40:05 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 9898 (http) with context path '/'
+2025-12-20 23:40:05 [restartedMain] INFO  com.notetaker.NoteTakerApplication - Started NoteTakerApplication in 1.165 seconds (process running for 616.727)
+2025-12-20 23:40:05 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-12-20 23:40:10 [http-nio-9898-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-20 23:40:10 [http-nio-9898-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-20 23:40:10 [http-nio-9898-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-12-20 23:40:10 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (username, email, name, password, user_role, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2025-12-20 23:40:11 [http-nio-9898-exec-2] WARN  org.hibernate.orm.jdbc.error - HHH000247: ErrorCode: 1062, SQLState: 23000
+2025-12-20 23:40:11 [http-nio-9898-exec-2] WARN  org.hibernate.orm.jdbc.error - Duplicate entry 'Amanacer' for key 'users.UKr43af9ap4edm43mmtq01oddj6'
+2025-12-20 23:40:11 [http-nio-9898-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.dao.DataIntegrityViolationException: could not execute statement [Duplicate entry 'Amanacer' for key 'users.UKr43af9ap4edm43mmtq01oddj6'] [insert into users (username,email,name,password,user_role,id) values (?,?,?,?,?,?)]; SQL [insert into users (username,email,name,password,user_role,id) values (?,?,?,?,?,?)]; constraint [users.UKr43af9ap4edm43mmtq01oddj6]]
+2025-12-20 23:41:44 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (username, email, name, password, user_role, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2025-12-20 23:41:44 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-12-20 23:41:44 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        refresh_token_seq 
+    for
+        update
+2025-12-20 23:41:44 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    update
+        refresh_token_seq 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2025-12-20 23:41:44 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        ns1_0.setting_id,
+        ns1_0.category,
+        ns1_0.created_at,
+        ns1_0.setting_key,
+        ns1_0.setting_value,
+        ns1_0.updated_at,
+        ns1_0.user_id 
+    from
+        tab_noti_setting_det ns1_0 
+    where
+        ns1_0.category=? 
+        and ns1_0.user_id=? 
+        and ns1_0.setting_key in (?)
+2025-12-20 23:41:44 [http-nio-9898-exec-4] INFO  c.n.service.NotificationServiceImpl - inside fetching Notification template of category: EMAIL and event name: user_registration_event
+2025-12-20 23:41:44 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        nt1_0.template_id,
+        nt1_0.category,
+        nt1_0.created_at,
+        nt1_0.event_name,
+        nt1_0.message_text,
+        nt1_0.status,
+        nt1_0.subject,
+        nt1_0.updated_at,
+        nt1_0.user_role 
+    from
+        tab_notification_template_det nt1_0 
+    where
+        nt1_0.category=? 
+        and nt1_0.event_name=? 
+        and nt1_0.status=1
+2025-12-20 23:41:51 [http-nio-9898-exec-4] INFO  c.n.service.NotificationServiceImpl - saving notification history for user: 336c91ad-2fe9-40f9-8c19-1356d95d85f7 and the event name is : user_registration_event
+2025-12-20 23:41:51 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        tab_noti_history_det_seq 
+    for
+        update
+2025-12-20 23:41:51 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    update
+        tab_noti_history_det_seq 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2025-12-20 23:41:51 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        refresh_token
+        (expiration_time, refresh_token, user_id, id) 
+    values
+        (?, ?, ?, ?)
+2025-12-20 23:41:51 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_noti_history_det
+        (category, created_at, event_name, message_text, subject, user_id, user_role, template_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:42:36 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-12-20 23:42:36 [Thread-13] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-20 23:42:36 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-9898"]
+2025-12-20 23:42:36 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-12-20 23:42:36 [Thread-13] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-9898"]
+2025-12-20 23:42:36 [Thread-13] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-20 23:42:36 [Thread-13] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown initiated...
+2025-12-20 23:42:36 [Thread-13] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown completed.
+2025-12-20 23:42:36 [restartedMain] INFO  com.notetaker.NoteTakerApplication - Starting NoteTakerApplication using Java 23 with PID 684 (D:\STSPROJECTS\NoteTaker\target\classes started by ASUS in D:\STSPROJECTS\NoteTaker)
+2025-12-20 23:42:36 [restartedMain] INFO  com.notetaker.NoteTakerApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-20 23:42:36 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-20 23:42:36 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 32 ms. Found 7 JPA repository interfaces.
+2025-12-20 23:42:36 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 9898 (http)
+2025-12-20 23:42:36 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9898"]
+2025-12-20 23:42:36 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-20 23:42:36 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2025-12-20 23:42:36 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 411 ms
+2025-12-20 23:42:36 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Starting...
+2025-12-20 23:42:36 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-5 - Added connection com.mysql.cj.jdbc.ConnectionImpl@65676319
+2025-12-20 23:42:36 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Start completed.
+2025-12-20 23:42:36 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-20 23:42:36 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-20 23:42:36 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-20 23:42:36 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/notetaker]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.40
+	Default catalog/schema: notetaker/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DatasourceConnectionProviderImpl
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-20 23:42:36 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-20 23:42:36 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-20 23:42:37 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-12-20 23:42:37 [restartedMain] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-12-20 23:42:37 [restartedMain] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-20 23:42:37 [restartedMain] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-12-20 23:42:37 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-12-20 23:42:37 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9898"]
+2025-12-20 23:42:37 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 9898 (http) with context path '/'
+2025-12-20 23:42:37 [restartedMain] INFO  com.notetaker.NoteTakerApplication - Started NoteTakerApplication in 1.108 seconds (process running for 768.231)
+2025-12-20 23:42:37 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-12-20 23:43:15 [http-nio-9898-exec-4] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-20 23:43:15 [http-nio-9898-exec-4] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-20 23:43:15 [http-nio-9898-exec-4] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-12-20 23:43:15 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (username, email, name, password, user_role, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2025-12-20 23:43:15 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-12-20 23:43:15 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        refresh_token_seq 
+    for
+        update
+2025-12-20 23:43:15 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    update
+        refresh_token_seq 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2025-12-20 23:43:15 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        ns1_0.setting_id,
+        ns1_0.category,
+        ns1_0.created_at,
+        ns1_0.setting_key,
+        ns1_0.setting_value,
+        ns1_0.updated_at,
+        ns1_0.user_id 
+    from
+        tab_noti_setting_det ns1_0 
+    where
+        ns1_0.category=? 
+        and ns1_0.user_id=? 
+        and ns1_0.setting_key in (?)
+2025-12-20 23:43:15 [http-nio-9898-exec-4] INFO  c.n.service.NotificationServiceImpl - inside fetching Notification template of category: EMAIL and event name: user_registration_event
+2025-12-20 23:43:15 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        nt1_0.template_id,
+        nt1_0.category,
+        nt1_0.created_at,
+        nt1_0.event_name,
+        nt1_0.message_text,
+        nt1_0.status,
+        nt1_0.subject,
+        nt1_0.updated_at,
+        nt1_0.user_role 
+    from
+        tab_notification_template_det nt1_0 
+    where
+        nt1_0.category=? 
+        and nt1_0.event_name=? 
+        and nt1_0.status=1
+2025-12-20 23:43:21 [http-nio-9898-exec-4] INFO  c.n.service.NotificationServiceImpl - saving notification history for user: a78f87ee-cfbd-43dc-8fa5-4c31bcc0e92a and the event name is : user_registration_event
+2025-12-20 23:43:21 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        next_val as id_val 
+    from
+        tab_noti_history_det_seq 
+    for
+        update
+2025-12-20 23:43:21 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    update
+        tab_noti_history_det_seq 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2025-12-20 23:43:21 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        refresh_token
+        (expiration_time, refresh_token, user_id, id) 
+    values
+        (?, ?, ?, ?)
+2025-12-20 23:43:21 [http-nio-9898-exec-4] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tab_noti_history_det
+        (category, created_at, event_name, message_text, subject, user_id, user_role, template_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-12-20 23:44:49 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-12-20 23:44:49 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        rt1_0.id,
+        rt1_0.expiration_time,
+        rt1_0.refresh_token,
+        u1_0.id,
+        u1_0.username,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.user_role 
+    from
+        refresh_token rt1_0 
+    left join
+        users u1_0 
+            on u1_0.id=rt1_0.user_id 
+    where
+        rt1_0.user_id=?
+2025-12-20 23:44:49 [http-nio-9898-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        nd1_0.note_id,
+        nd1_0.body,
+        nd1_0.created_at,
+        nd1_0.title,
+        nd1_0.updated_at,
+        nd1_0.user_id 
+    from
+        tab_notes_det nd1_0 
+    where
+        nd1_0.note_id=? 
+        and nd1_0.user_id=?
+2025-12-20 23:44:49 [http-nio-9898-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.RuntimeException: Invalid note id]

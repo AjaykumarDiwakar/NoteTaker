@@ -33,7 +33,7 @@ public class NotesDetail {
 	@Column(name = "user_id", nullable = false)
 	private String userId;
 
-	@Column(name = "title", nullable = false, unique = true)
+	@Column(name = "title", nullable = false)
 	private String title;
 
 	@Column(columnDefinition = "TEXT")

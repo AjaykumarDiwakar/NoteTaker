@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.notetaker.auth.entity.UserRole;
 import com.notetaker.auth.service.JwtService;
 import com.notetaker.constant.NoteTakerConstants;
 import com.notetaker.constant.NotificationCategory;
@@ -55,9 +56,6 @@ public class NoteServiceImpl implements NoteService {
 	private ImageDetailRepository imageDetailRepository;
 
 	@Autowired
-	private NotificationService notificationService;
-
-	@Autowired
 	private NotificationSettingService notificationSettingService;
 
 	@Autowired
@@ -70,21 +68,23 @@ public class NoteServiceImpl implements NoteService {
 		String token = jwtService.extractActualTokenFromBearerAuth(request.getHeader("Authorization"));
 		String userName = jwtService.extractUsername(token);
 		String userId = jwtService.extractUserId(token);
+		ObjectMapper objectMapper = new ObjectMapper();
+		NoteDto dto = objectMapper.readValue(note, NoteDto.class);
+		if (notesDetailRepository.isNoteWithSameTitleAvailable(userId, dto.getTitle())) {
+			throw new RuntimeException("Duplicate title is not allowed");
+		}
 		String email = jwtService.extractEmail(token);
 		String name = jwtService.extractName(token);
-		String role = "USER";
+		String role = UserRole.USER.name();
 		if (files != null && !files.isEmpty()) {
 			images = uploadFiles(files, userName, userId);
 		}
-		ObjectMapper objectMapper = new ObjectMapper();
-		NoteDto dto = objectMapper.readValue(note, NoteDto.class);
 		NotesDetail notesDetail = NotesDetail.builder().title(dto.getTitle()).body(dto.getBody()).userId(userId)
 				.createdAt(LocalDateTime.now()).updatedAt(LocalDateTime.now()).images(images).build();
 		images.forEach(x -> x.setNote(notesDetail));
 		NotesDetail savedNote = notesDetailRepository.save(notesDetail);
-		sendAddNoeNotificationOnEMail(NotificationCategory.EMAIL.name(), userId, List
-				.of(NotificationSettingKeys.ALLOW_EMAIL_NOTIFICATIONS, NotificationSettingKeys.EMAIL_ON_ADD_NOTE_KEY),
-				email, notesDetail, name, role);
+		sendAddNoteNotificationOnEmail(userId, List.of(NotificationSettingKeys.ALLOW_EMAIL_NOTIFICATIONS,
+				NotificationSettingKeys.EMAIL_ON_ADD_NOTE_KEY), email, notesDetail, name, role);
 		return convertNoteEntityToDto(savedNote);
 	}
 
@@ -132,6 +132,7 @@ public class NoteServiceImpl implements NoteService {
 	public Object getAllNotesOfUser(HttpServletRequest request) {
 		String token = jwtService.extractActualTokenFromBearerAuth(request.getHeader("Authorization"));
 		String userId = jwtService.extractUserId(token);
+		log.info("inside getting notes for the userid: " + userId);
 		List<NotesDetail> notes = notesDetailRepository.getAllNotesByUserId(userId);
 		List<NoteDto> notesDto = new ArrayList<>();
 		for (NotesDetail note : notes) {
@@ -142,15 +143,17 @@ public class NoteServiceImpl implements NoteService {
 
 	@Override
 	public Object updateNotes(List<MultipartFile> files, String noteStr, Long noteId, HttpServletRequest request) {
-		NotesDetail note = notesDetailRepository.findById(noteId)
+		String token = jwtService.extractActualTokenFromBearerAuth(request.getHeader("Authorization"));
+		String userName = jwtService.extractUsername(token);
+		String userId = jwtService.extractUserId(token);
+		String email = jwtService.extractEmail(token);
+		String name = jwtService.extractName(token);
+		NotesDetail note = notesDetailRepository.findByIdAndUserId(noteId,userId)
 				.orElseThrow(() -> new RuntimeException("Invalid note id"));
 		List<ImageDetail> images = note.getImages();
 		deleteImg(images);
 		imageDetailRepository.deleteAll(images);
 		List<ImageDetail> newImages = new ArrayList<ImageDetail>();
-		String token = jwtService.extractActualTokenFromBearerAuth(request.getHeader("Authorization"));
-		String userName = jwtService.extractUsername(token);
-		String userId = jwtService.extractUserId(token);
 		if (files != null && !files.isEmpty()) {
 			newImages = uploadFiles(files, userName, userId);
 		}
@@ -161,16 +164,26 @@ public class NoteServiceImpl implements NoteService {
 				.userId(userId).createdAt(LocalDateTime.now()).updatedAt(LocalDateTime.now()).images(newImages).build();
 		newImages.forEach(x -> x.setNote(notesDetail));
 		NotesDetail savedNote = notesDetailRepository.save(notesDetail);
+		sendUpdateNoteNotificationOnEmail(userId,
+				List.of(NotificationSettingKeys.ALLOW_EMAIL_NOTIFICATIONS,
+						NotificationSettingKeys.EMAIL_ON_UPDATE_NOTE_KEY),
+				email, notesDetail, name, UserRole.USER.name());
 		return convertNoteEntityToDto(savedNote);
 	}
 
 	@Override
 	public Object deleteNote(Long noteId, HttpServletRequest request) {
-		NotesDetail note = notesDetailRepository.findById(noteId)
+		String token = jwtService.extractActualTokenFromBearerAuth(request.getHeader("Authorization"));
+		String userId = jwtService.extractUserId(token);
+		String email = jwtService.extractEmail(token);
+		String name = jwtService.extractName(token);
+		NotesDetail note = notesDetailRepository.findByIdAndUserId(noteId,userId)
 				.orElseThrow(() -> new RuntimeException("Invalid note id"));
 		List<ImageDetail> images = note.getImages();
 		deleteImg(images);
 		notesDetailRepository.delete(note);
+		sendDeleteNoteNotificationOnEmail(userId, List.of(NotificationSettingKeys.ALLOW_EMAIL_NOTIFICATIONS,
+				NotificationSettingKeys.EMAIL_ON_DELETE_NOTE_KEY), email, note, name, UserRole.USER.name());
 		return "Success";
 	}
 
@@ -185,24 +198,39 @@ public class NoteServiceImpl implements NoteService {
 		}
 	}
 
-	private void sendAddNoeNotificationOnEMail(String category, String userId, List<String> keys, String email,
-			NotesDetail notesDetail, String name, String role) {
+	private void sendAddNoteNotificationOnEmail(String userId, List<String> keys, String email, NotesDetail notesDetail,
+			String name, String role) {
 		Map<String, Boolean> settingMap = notificationSettingService
 				.getSettingByeKeyAndCategoryForUser(NotificationCategory.EMAIL.name(), userId, keys);
 		if (settingMap.getOrDefault(NotificationSettingKeys.ALLOW_EMAIL_NOTIFICATIONS, false)
 				&& settingMap.getOrDefault(NotificationSettingKeys.EMAIL_ON_ADD_NOTE_KEY, false)) {
-			NotificationTemplates tem = notificationService
-					.getNotificationTemplateByEventName(NoteTakerConstants.NOTIFICATION_ON_ADD_NOTE_EVENT, category);
-			if (tem == null) {
-				log.info("no email template found for add note event");
-				return;
-			}
 			Object[] args = { notesDetail.getTitle(), name, notesDetail.getCreatedAt() };
-			MailBody mailBody = MailBody.builder().to(email).subject(MessageFormat.format(tem.getSubject(), args))
-					.text(MessageFormat.format(tem.getMessageText(), args)).build();
-			emailService.sendSimpleMessage(mailBody);
-			notificationService.addNotificationHistoryInDbForEmail(mailBody, userId,
-					NoteTakerConstants.NOTIFICATION_ON_ADD_NOTE_EVENT, role);
+			emailService.sendEventBasedEmailNotification(userId, email, name, role, args,
+					NoteTakerConstants.NOTIFICATION_ON_ADD_NOTE_EVENT);
+		}
+	}
+
+	private void sendUpdateNoteNotificationOnEmail(String userId, List<String> keys, String email,
+			NotesDetail notesDetail, String name, String role) {
+		Map<String, Boolean> settingMap = notificationSettingService
+				.getSettingByeKeyAndCategoryForUser(NotificationCategory.EMAIL.name(), userId, keys);
+		if (settingMap.getOrDefault(NotificationSettingKeys.ALLOW_EMAIL_NOTIFICATIONS, false)
+				&& settingMap.getOrDefault(NotificationSettingKeys.EMAIL_ON_UPDATE_NOTE_KEY, false)) {
+			Object[] args = { notesDetail.getTitle(), name, notesDetail.getCreatedAt() };
+			emailService.sendEventBasedEmailNotification(userId, email, name, role, args,
+					NoteTakerConstants.NOTIFICATION_ON_UPDATE_NOTE_EVENT);
+		}
+	}
+
+	private void sendDeleteNoteNotificationOnEmail(String userId, List<String> keys, String email,
+			NotesDetail notesDetail, String name, String role) {
+		Map<String, Boolean> settingMap = notificationSettingService
+				.getSettingByeKeyAndCategoryForUser(NotificationCategory.EMAIL.name(), userId, keys);
+		if (settingMap.getOrDefault(NotificationSettingKeys.ALLOW_EMAIL_NOTIFICATIONS, false)
+				&& settingMap.getOrDefault(NotificationSettingKeys.EMAIL_ON_DELETE_NOTE_KEY, false)) {
+			Object[] args = { notesDetail.getTitle(), name, notesDetail.getCreatedAt() };
+			emailService.sendEventBasedEmailNotification(userId, email, name, role, args,
+					NoteTakerConstants.NOTIFICATION_ON_DELETE_NOTE_EVENT);
 		}
 	}
 
