@@ -1,12 +1,16 @@
 package com.notetaker.service;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
 import com.notetaker.dto.MailBody;
 
+import jakarta.mail.internet.MimeMessage;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 public class EmailService {
 
@@ -20,12 +24,19 @@ public class EmailService {
 	}
 
 	public void sendSimpleMessage(MailBody mailBody) {
-		SimpleMailMessage message = new SimpleMailMessage();
-		message.setTo(mailBody.getTo());
-		message.setFrom(sendermail);
-		message.setSubject(mailBody.getSubject());
-		message.setText(mailBody.getText());
-
-		javaMailSender.send(message);
+		try {
+			MimeMessage message = javaMailSender.createMimeMessage();
+			MimeMessageHelper helper = new MimeMessageHelper(message, false);
+			
+			helper.setTo(mailBody.getTo());
+			helper.setSubject(mailBody.getSubject());
+			helper.setText(mailBody.getText(), true); // 🔥 false = plain text (NOT HTML)
+			
+			javaMailSender.send(message);
+			
+		} catch (Exception e) {
+			log.error("error while sending email");
+			
+		}
 	}
 }

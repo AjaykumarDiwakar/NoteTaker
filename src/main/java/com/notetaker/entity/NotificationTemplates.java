@@ -19,7 +19,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "tab_email_template_det")
+@Table(name = "tab_notification_template_det")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

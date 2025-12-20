@@ -1,6 +1,7 @@
 package com.notetaker.service;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -56,8 +57,8 @@ public class NotificationSettingServiceImpl implements NotificationSettingServic
 		String token = jwtService.extractActualTokenFromBearerAuth(request.getHeader("Authorization"));
 		String userId = jwtService.extractUserId(token);
 		log.info("updating setting of category : " + category + " for userId : " + userId);
-		Map<String, Boolean> defaultSetting = NotificationSettingKeys.SETTING_MAP
-				.get(NotificationCategory.valueOf(category));
+		Map<String, Boolean> defaultSetting =new HashMap<> (NotificationSettingKeys.SETTING_MAP
+				.get(NotificationCategory.valueOf(category)));
 
 		for (Map.Entry<String, Boolean> entry : settings.entrySet()) {
 			defaultSetting.put(entry.getKey(), entry.getValue());

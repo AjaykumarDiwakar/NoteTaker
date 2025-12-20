@@ -15,6 +15,7 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.notetaker.auth.service.JwtService;
@@ -62,6 +63,7 @@ public class NoteServiceImpl implements NoteService {
 	@Autowired
 	private EmailService emailService;
 
+	@Transactional
 	@Override
 	public Object addNote(List<MultipartFile> files, String note, HttpServletRequest request) {
 		List<ImageDetail> images = new ArrayList<ImageDetail>();
@@ -70,7 +72,7 @@ public class NoteServiceImpl implements NoteService {
 		String userId = jwtService.extractUserId(token);
 		String email = jwtService.extractEmail(token);
 		String name = jwtService.extractName(token);
-		String role = jwtService.extractRole(token);
+		String role = "USER";
 		if (files != null && !files.isEmpty()) {
 			images = uploadFiles(files, userName, userId);
 		}
